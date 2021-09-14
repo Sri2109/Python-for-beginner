@@ -1,0 +1,43 @@
+emptystring = ""
+nullpointer = -1
+maxstacksize = 8
+stack = []
+#stack.append ('14')
+#print(stack[0])
+
+def initializestack ():
+    global baseofpointer, topstackpointer
+    baseofpointer   = 0
+    topstackpointer = nullpointer
+
+def push(newitem):
+    global topstackpointer
+    if topstackpointer < maxstacksize - 1:
+        topstackpointer = topstackpointer + 1
+       # print(topstackpointer)
+        stack.insert(topstackpointer,newitem)
+        print(stack)
+    else :
+        print("The stack is full, no items can be added")
+
+def pop() :
+    global topstackpointer
+    item = emptystring
+    if topstackpointer > nullpointer :
+        item = stack[topstackpointer]
+        stack.pop()
+      #    queue.pop(0)
+      #  print("item",item)
+      #  stack.remove(item)
+        topstackpointer = topstackpointer - 1
+        print(stack)
+    return item
+
+initializestack()
+item1 = input("Enter the data to be pushed into the stack : ")
+push(item1)
+item2 = input("Enter the data to be pushed into the stack : ")
+push(item2)
+print("removing an element LIFO")
+popof = pop()
+#print(popof)
