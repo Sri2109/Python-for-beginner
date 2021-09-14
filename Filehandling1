@@ -1,0 +1,25 @@
+print("Hi there! Welcome!")
+name= input(" Please enter name of patient:  ")
+doc=[" Ram", " Shyam", " Sundar", " Nathan"]
+specialisation=["cardiologist"," pulmonlogist", "opthalmologist", " general physician"]
+splnum=[1,2,3,4]
+timeavailable=[" 10am-12pm","2pm-4pm", "1pm-3pm", "10am-4pm"]
+print("Here is list of specialisations we provide:\n 1-cardiologist \n 2-pulmonlogist \n 3-opthalmologist \n 4- general physician  ")
+splinput= int( input(" Please enter the number for specialisation (1,2,3 or 4): "))
+i=1
+for i in range(len(splnum)):
+  if splinput== splnum[i]:
+    print("You have chosen " + specialisation[i]+ "\n"+" and the name of you doctor is: " + doc[i] +"\n" + " Who is available from: " + timeavailable[i])
+    appointment= input(" Please enter your time of visit:  ")
+    appointmentdetails= (name + "   " + doc[i]+ "   " + appointment + "\n")
+    print("Details:" + appointmentdetails )
+
+  else:
+    i=i+1
+
+file=open("appointments.txt" , "a+")
+file.write(appointmentdetails)
+file.close()
+
+print("Thanks for booking your appointment, Dr." + doc[i]+"  will see you at  " + appointment  )
+  
